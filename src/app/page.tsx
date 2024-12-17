@@ -1,7 +1,5 @@
-
 "use client";
 export default function Home() {
-
   const handleLogin = () => {
     const client_id = "CLIENT_ID";
     const redirect_uri = "http://localhost:3000/callback";
@@ -10,17 +8,17 @@ export default function Home() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-yellow-200">
-  <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-    <h1 className="text-2xl font-bold mb-4">Bem-vindo ao sistema</h1>
-    <button
-      onClick={handleLogin}
-      className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
-    >
-      Fazer Login via CAv4
-    </button>
-  </div>
-</div>
+    <div className="flex items-center justify-center h-screen bg-sky-900">
+      <div className="bg-black p-8 rounded-lg shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-4 text-white">Bem-vindo ao sistema</h1>
+        <button
+          onClick={handleLogin}
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+        >
+          Fazer Login via CAv4
+        </button>
+      </div>
+    </div>
   );
 }
 

@@ -20,7 +20,7 @@ export default function DeveloperPage() {
   useEffect(() => {
     const fetchUserInfo = async () => {
       const tokens = await getAccessToken();
-      console.log("access token: " + tokens);
+      //console.log("access token: " + tokens);
       if (tokens) {
         const token_decode = decodeToken(tokens);
 
@@ -69,7 +69,7 @@ export default function DeveloperPage() {
         </div>
       ) : (
         <h1 className="text-white text-lg">
-          Aguardando informações do usuário...
+          VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESTÁ ROTA!!!!!
         </h1>
       )}
     </div>

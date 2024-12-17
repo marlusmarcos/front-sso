@@ -32,9 +32,13 @@ export default function Home() {
     };
     fetchUserInfo();
   }, []);
+  const handleDesenvolvedor = () => {
+    const authUrl = `http://localhost:3000/desenvolvedor`;
+    window.location.href = authUrl;
+  };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-green-100">
+    <div className="flex items-center justify-center h-screen bg-sky-500 gap-10" style={{ flexDirection: 'column' }}>
       {error ? (
         <h1 className="text-red-500 font-semibold text-xl">{error}</h1>
       ) : userInfo ? (
@@ -46,7 +50,8 @@ export default function Home() {
             Olá, {userInfo.username}!
           </h1>
           <h2 className="mt-2 text-lg text-gray-600">
-            Função: <span className="font-semibold text-gray-800">{userInfo.role}</span>
+            Função:{" "}
+            <span className="font-semibold text-gray-800">{userInfo.role}</span>
           </h2>
         </div>
       ) : (
@@ -58,9 +63,19 @@ export default function Home() {
           >
             Fazer Login via CAv4
           </button>
-          <h1 className="mt-4 text-gray-500 text-lg">Aguardando informações do usuário...</h1>
+          <h1 className="mt-4 text-gray-500 text-lg">
+            Aguardando informações do usuário...
+          </h1>
         </div>
       )}
+      <div style={{ display: 'block' }}>
+        <button
+          onClick={handleDesenvolvedor}
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+        >
+          Ir para página protegida
+        </button>
+      </div>
     </div>
   );
 }
